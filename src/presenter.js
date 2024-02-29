@@ -1,15 +1,21 @@
-import precio_neto from "./funciones";
+import funs from "./funciones";
 
 const cantidad = document.querySelector("#cantidad-item");
 const precio = document.querySelector("#precio-item");
+const estado = document.querySelector("#estado");
 const form = document.querySelector("#totalizador-form");
-const div = document.querySelector("#resultado-div");
+const div1 = document.querySelector("#precioNeto-div");
+const div2 = document.querySelector("#impuesto-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const cantidadNumber = Number.parseInt(cantidad.value);
   const precioNumber = Number.parseInt(precio.value);
+  const estadoValue = estado.value;
 
-  div.innerHTML = "<p> Precio Neto: " + precio_neto(cantidadNumber, precioNumber) + "$</p>";
+  const precioNeto = funs.precio_neto(cantidadNumber, precioNumber);
+
+  div1.innerHTML = "<p> Precio Neto: " + precioNeto + "$</p>";
+  div2.innerHTML = "<p> Impuesto para " + estadoValue + "(" + funs.impuesto(estadoValue)*100 + "%): " + precioNeto*funs.impuesto(estadoValue) + "$</p>";
 });
