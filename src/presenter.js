@@ -1,15 +1,15 @@
-import sumar from "./sumador";
+import precio_neto from "./funciones";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const cantidad = document.querySelector("#cantidad-item");
+const precio = document.querySelector("#precio-item");
+const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const cantidadNumber = Number.parseInt(cantidad.value);
+  const precioNumber = Number.parseInt(precio.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p> Precio Neto: " + precio_neto(cantidadNumber, precioNumber) + "$</p>";
 });

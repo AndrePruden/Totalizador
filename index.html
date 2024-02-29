@@ -1,12 +1,22 @@
 <html>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
+    <h1>Totalizador</h1>
+    <form id="totalizador-form">
+      <label for="cantidad-item">Cantidad de Item:</label>
+      <input type="number" id="cantidad-item" />
+      <label for="precio-item">Precio de Item:</label>
+      <input type="number" id="precio-item" />
+
+      <label for="estado">Estado:</label>
+      <select id="estado">
+        <option value="UT">UT</option>
+        <option value="NV">NV</option>
+        <option value="TX">TX</option>
+        <option value="AL">AL</option>
+        <option value="CA">CA</option>
+      </select>
+
+      <input type="submit" value="Totalizador" id="totalizar-button" />
     </form>
     <div id="resultado-div"></div>
 
