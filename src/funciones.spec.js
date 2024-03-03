@@ -35,3 +35,39 @@ describe("Obtener Impuesto", () => {
       expect(funs.impuesto("CA")).toEqual(0.0825);
     });   
 });
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0 de descuento para un precio neto de <1000", () => {
+    expect(funs.descuento(950)).toEqual(0);
+  });   
+});
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0.03 de descuento para un precio neto de >=1000 y <3000", () => {
+    expect(funs.descuento(1250)).toEqual(0.03);
+  });   
+});
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0.05 de descuento para un precio neto de >=3000 y <7000", () => {
+    expect(funs.descuento(4520)).toEqual(0.05);
+  });   
+});
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0.07 de descuento para un precio neto de >=7000 y <10000", () => {
+    expect(funs.descuento(9880)).toEqual(0.07);
+  });   
+});
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0.1 de descuento para un precio neto de >=10000 y <30000", () => {
+    expect(funs.descuento(21546)).toEqual(0.1);
+  });   
+});
+
+describe("Obtener Porcentaje de Descuento", () => {
+  it("Deberia obtener 0.15 de descuento para un precio neto de >=30000", () => {
+    expect(funs.descuento(35000)).toEqual(0.15);
+  });   
+});
