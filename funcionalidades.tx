@@ -5,6 +5,9 @@ Priorizar la lista de funcionalidades
 1. Calcular Precio Neto ✓
 2. Calcular Impuesto (Primero de california) ✓
 3. Descuento al Precio Neto tomando en cuenta la tabla de descuentos ✓
-4. Calcular el Precio Total (Precio Neto + Impuesto - Descuento)
+4. Calcular el Precio Total (Precio Neto + Impuesto - Descuento) ✓
+5. Agregar seguridad, en el sentido de que solo se coloquen cantidades y precios validos ✓
 
 #Adiciones o extensiones para el proyecto final
+6. Poner que el código de estado por defecto deberá ser California.
+7. Poder elegir  una  categoría de producto. (La categoría por defecto es ‘Varios)

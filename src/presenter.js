@@ -18,9 +18,15 @@ form.addEventListener("submit", (event) => {
 
   const precioNeto = funs.precio_neto(cantidadNumber, precioNumber);
 
+  if(cantidadNumber <= 0 || isNaN(cantidadNumber) || precioNumber <= 0 || isNaN(precioNumber))
+  {
+    div1.innerHTML = "<p> ERROR! </p>";
+  }
+  else{
+  console.log(cantidadNumber);
   div1.innerHTML = "<p> Precio Neto: " + precioNeto + "$</p>";
-  div2.innerHTML = "<p> Impuesto para " + estadoValue + "(" + funs.impuesto(estadoValue)*100 + "%): " + precioNeto*funs.impuesto(estadoValue) + "$</p>";
+  div2.innerHTML = "<p> Impuesto para " + estadoValue + "(" + funs.impuesto(estadoValue)*100 + "%): " + (precioNeto*funs.impuesto(estadoValue)).toFixed(3) + "$</p>";
   div3.innerHTML = "<p> Descuento("+ funs.descuento(precioNeto)*100 +"%): " + precioNeto*funs.descuento(precioNeto) + "$</p>";
   div4.innerHTML = "<p> Precio Total(Descuento e Impuesto): " + funs.getTotal(precioNeto, estadoValue) + "$</p>";
-
+ }
 });
