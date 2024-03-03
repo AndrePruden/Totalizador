@@ -35,6 +35,25 @@ function descuento(precioNeto){
     return 0
 }
 
+function descuentoCat(categoria){
+    switch (categoria) {
+        case "Varios":
+          return 0;
+        case "Muebles":
+            return 0;
+        case "Material":
+            return 0.015;
+        case "Bebidas":
+            return 0;
+        case "Alimentos":
+            return 0.02;
+        case "Electronicos":
+            return 0.01;
+        case "Vestimenta":
+            return 0;
+    }
+}
+
 function impuestoCat(categoria){
     switch (categoria) {
         case "Varios":
@@ -56,9 +75,10 @@ function impuestoCat(categoria){
 
 function getTotal(precioNeto, estado, categoria="Varios"){
     const descuento = funs.descuento(precioNeto)*precioNeto
+    const descuentoCat = funs.descuentoCat(categoria)*precioNeto
     const impuesto = funs.impuesto(estado)*precioNeto
     const impuestoCat = funs.impuestoCat(categoria)*precioNeto
-    return precioNeto + impuesto + impuestoCat - descuento
+    return precioNeto + impuesto + impuestoCat - descuento - descuentoCat
 }
 
 const funs = {
@@ -67,7 +87,8 @@ const funs = {
     impuesto: impuesto,
     descuento: descuento,
     getTotal: getTotal,
-    impuestoCat: impuestoCat
+    impuestoCat: impuestoCat,
+    descuentoCat: descuentoCat
 };
 
 export default funs;

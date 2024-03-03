@@ -1,7 +1,7 @@
 import funs from "./funciones.js";
 
 describe("Deberia sumar dos numeros", () => {
-  it("Deberia multiplicar la cantidad por el precio", () => {
+  it("Deberia sumar dos numeros", () => {
     expect(funs.sumar(5, 2)).toEqual(7);
   });
 });
@@ -131,3 +131,46 @@ describe("Obtener Impuesto de Categoria", () => {
     expect(funs.impuestoCat("Alimentos")).toEqual(0);
   });   
 });
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0.02 de descuento para la categoria Alimentos", () => {
+    expect(funs.descuentoCat("Alimentos")).toEqual(0.02);
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0 de descuento para la categoria Bebidas Alcohólicas", () => {
+    expect(funs.descuentoCat("Bebidas")).toEqual(0);
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0.015 de descuento para la categoria Material de Escritorio", () => {
+    expect(funs.descuentoCat("Material")).toEqual(0.015)
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0 de descuento para la categoria Muebles", () => {
+    expect(funs.descuentoCat("Muebles")).toEqual(0)
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0.01 de descuento para la categoria Electrónicos", () => {
+    expect(funs.descuentoCat("Electronicos")).toEqual(0.01)
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0 de descuento para la categoria Vestimenta", () => {
+    expect(funs.descuentoCat("Vestimenta")).toEqual(0)
+  });   
+});
+
+describe("Obtener Descuento de Categoria", () => {
+  it("Deberia obtener 0 de descuento para la categoria Varios", () => {
+    expect(funs.descuentoCat("Varios")).toEqual(0)
+  });   
+});
+
