@@ -1,5 +1,11 @@
 import funs from "./funciones.js";
 
+describe("Deberia sumar dos numeros", () => {
+  it("Deberia multiplicar la cantidad por el precio", () => {
+    expect(funs.sumar(5, 2)).toEqual(7);
+  });
+});
+
 describe("Calcular Precio Neto", () => {
   it("Deberia multiplicar la cantidad por el precio", () => {
     expect(funs.precio_neto(5, 2)).toEqual(10);

@@ -1,3 +1,7 @@
+function sumar(num1, num2){
+    return num1 + num2;
+}
+
 function precio_neto(cantidad, precio) {
     return cantidad * precio;
   }
@@ -50,13 +54,15 @@ function impuestoCat(categoria){
     }
 }
 
-function getTotal(precioNeto, estado){
+function getTotal(precioNeto, estado, categoria="Varios"){
     const descuento = funs.descuento(precioNeto)*precioNeto
     const impuesto = funs.impuesto(estado)*precioNeto
-    return precioNeto + impuesto - descuento
+    const impuestoCat = funs.impuestoCat(categoria)*precioNeto
+    return precioNeto + impuesto + impuestoCat - descuento
 }
 
 const funs = {
+    sumar: sumar,
     precio_neto: precio_neto,
     impuesto: impuesto,
     descuento: descuento,

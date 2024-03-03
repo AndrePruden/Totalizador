@@ -10,4 +10,5 @@ Priorizar la lista de funcionalidades
 
 #Adiciones o extensiones para el proyecto final
 6. Poner que el código de estado por defecto deberá ser California. ✓
-7. Poder elegir  una  categoría de producto. (La categoría por defecto es ‘Varios)
+7. Poder elegir  una  categoría de producto. (La categoría por defecto es ‘Varios) ✓
+8. Sacar el impuesto a la categoria y mostrar un impuesto total entre categoria y el impuesto de Estado ✓
