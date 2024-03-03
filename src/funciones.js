@@ -31,6 +31,25 @@ function descuento(precioNeto){
     return 0
 }
 
+function impuestoCat(categoria){
+    switch (categoria) {
+        case "Varios":
+          return 0;
+        case "Muebles":
+            return 0.03;
+        case "Material":
+            return 0;
+        case "Bebidas":
+            return 0.07;
+        case "Alimentos":
+            return 0;
+        case "Electronicos":
+            return 0.04;
+        case "Vestimenta":
+            return 0.02;
+    }
+}
+
 function getTotal(precioNeto, estado){
     const descuento = funs.descuento(precioNeto)*precioNeto
     const impuesto = funs.impuesto(estado)*precioNeto
@@ -41,7 +60,8 @@ const funs = {
     precio_neto: precio_neto,
     impuesto: impuesto,
     descuento: descuento,
-    getTotal: getTotal
+    getTotal: getTotal,
+    impuestoCat: impuestoCat
 };
 
 export default funs;

@@ -80,6 +80,48 @@ describe("Obtener Precio Total", () => {
 
 describe("Obtener Precio Total", () => {
   it("Deberia obtener 1052.5 de precio total para un precio neto de 1000 en el estado de CA", () => {
-    expect(funs.getTotal(60, "TX")).toEqual(63.75);
+    expect(funs.getTotal(1000, "CA")).toEqual(1052.5);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0 de impuesto para la categoria Varios", () => {
+    expect(funs.impuestoCat("Varios")).toEqual(0);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0.02 de impuesto para la categoria Vestimenta", () => {
+    expect(funs.impuestoCat("Vestimenta")).toEqual(0.02);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0.04 de impuesto para la categoria Electrónicos", () => {
+    expect(funs.impuestoCat("Electronicos")).toEqual(0.04);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0.03 de impuesto para la categoria Muebles", () => {
+    expect(funs.impuestoCat("Muebles")).toEqual(0.03);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0 de impuesto para la categoria Material de Escritorio", () => {
+    expect(funs.impuestoCat("Material")).toEqual(0);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0.07 de impuesto para la categoria Bebidas Alcohólicas", () => {
+    expect(funs.impuestoCat("Bebidas")).toEqual(0.07);
+  });   
+});
+
+describe("Obtener Impuesto de Categoria", () => {
+  it("Deberia obtener 0 de impuesto para la categoria Alimentos", () => {
+    expect(funs.impuestoCat("Alimentos")).toEqual(0);
   });   
 });
