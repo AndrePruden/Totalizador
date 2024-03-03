@@ -31,10 +31,17 @@ function descuento(precioNeto){
     return 0
 }
 
+function getTotal(precioNeto, estado){
+    const descuento = funs.descuento(precioNeto)*precioNeto
+    const impuesto = funs.impuesto(estado)*precioNeto
+    return precioNeto + impuesto - descuento
+}
+
 const funs = {
     precio_neto: precio_neto,
     impuesto: impuesto,
-    descuento: descuento
+    descuento: descuento,
+    getTotal: getTotal
 };
 
 export default funs;

@@ -4,7 +4,7 @@ Priorizar la lista de funcionalidades
 #Primera parte del proyecto
 1. Calcular Precio Neto ✓
 2. Calcular Impuesto (Primero de california) ✓
-3. Descuento al Precio Neto tomando en cuenta la tabla de descuentos
+3. Descuento al Precio Neto tomando en cuenta la tabla de descuentos ✓
 4. Calcular el Precio Total (Precio Neto + Impuesto - Descuento)
 
 #Adiciones o extensiones para el proyecto final
