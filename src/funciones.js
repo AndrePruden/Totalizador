@@ -73,12 +73,30 @@ function impuestoCat(categoria){
     }
 }
 
-function getTotal(precioNeto, estado, categoria="Varios"){
+function costoEnvio(peso) {
+    if (peso >= 0 && peso <= 10) {
+        return 0;
+    } else if (peso >= 11 && peso <= 20) {
+        return 3.5;
+    } else if (peso >= 21 && peso <= 40) {
+        return 5;
+    } else if (peso >= 41 && peso <= 80) {
+        return 6;
+    } else if (peso >= 81 && peso <= 100) {
+        return 6.5;
+    } else if (peso >= 101 && peso <= 200) {
+        return 8;
+    } else {
+        return 9;
+    }
+}
+
+function getTotal(precioNeto, estado, categoria="Varios", costoEnvio=0){
     const descuento = funs.descuento(precioNeto)*precioNeto
     const descuentoCat = funs.descuentoCat(categoria)*precioNeto
     const impuesto = funs.impuesto(estado)*precioNeto
     const impuestoCat = funs.impuestoCat(categoria)*precioNeto
-    return precioNeto + impuesto + impuestoCat - descuento - descuentoCat
+    return precioNeto + impuesto + impuestoCat + costoEnvio - descuento - descuentoCat
 }
 
 const funs = {
@@ -88,7 +106,8 @@ const funs = {
     descuento: descuento,
     getTotal: getTotal,
     impuestoCat: impuestoCat,
-    descuentoCat: descuentoCat
+    descuentoCat: descuentoCat,
+    costoEnvio: costoEnvio
 };
 
 export default funs;

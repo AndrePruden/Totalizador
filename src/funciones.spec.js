@@ -174,3 +174,44 @@ describe("Obtener Descuento de Categoria", () => {
   });   
 });
 
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 0 de costo para un peso entre 0-10", () => {
+    expect(funs.costoEnvio(5)).toEqual(0)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 3.5 de costo para un peso entre 11-20", () => {
+    expect(funs.costoEnvio(14)).toEqual(3.5)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 5 de costo para un peso entre 21-40", () => {
+    expect(funs.costoEnvio(37)).toEqual(5)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 6 de costo para un peso entre 41-80", () => {
+    expect(funs.costoEnvio(74)).toEqual(6)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 6.5 de costo para un peso entre 81-100", () => {
+    expect(funs.costoEnvio(100)).toEqual(6.5)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 8 de costo para un peso entre 101-200", () => {
+    expect(funs.costoEnvio(150)).toEqual(8)
+  });   
+});
+
+describe("Obtener Costo de Envio", () => {
+  it("Deberia obtener 9 de costo para un peso mayor a 200", () => {
+    expect(funs.costoEnvio(300)).toEqual(9)
+  });   
+});
