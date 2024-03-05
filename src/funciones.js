@@ -91,6 +91,19 @@ function costoEnvio(peso) {
     }
 }
 
+function descuentoEnvio(tipoCliente) {
+    switch (tipoCliente) {
+        case "Normal":
+            return 0;
+        case "Recurrente":
+            return 0.005;
+        case "Antiguo":
+            return 0.01; 
+        case "Especial":
+            return 0.015;
+    }
+}
+
 function getTotal(precioNeto, estado, categoria="Varios", costoEnvio=0){
     const descuento = funs.descuento(precioNeto)*precioNeto
     const descuentoCat = funs.descuentoCat(categoria)*precioNeto
@@ -107,7 +120,8 @@ const funs = {
     getTotal: getTotal,
     impuestoCat: impuestoCat,
     descuentoCat: descuentoCat,
-    costoEnvio: costoEnvio
+    costoEnvio: costoEnvio,
+    descuentoEnvio: descuentoEnvio
 };
 
 export default funs;

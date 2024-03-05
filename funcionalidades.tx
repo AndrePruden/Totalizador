@@ -14,3 +14,4 @@ Priorizar la lista de funcionalidades
 8. Sacar el impuesto a la categoria y mostrar un impuesto total entre categoria y el impuesto de Estado ✓
 9. Sacar el descuento a la categoria y mostrar un descuento total entre categoria y el descuento del precio neto ✓
 10. Añadir en la IU el campo de peso volumetrico, y segun lo que ingrese el usuario establecer un costo de envio ✓
+11. Obtener el beneficio de descuento en el costo de envio segun el tipo de cliente ✓

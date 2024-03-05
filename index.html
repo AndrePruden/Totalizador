@@ -29,11 +29,21 @@
         <option value="Vestimenta">Vestimenta</option>
       </select>
 
+      <label for="tipoCliente">Tipo de Cliente:</label>
+      <select id="tipoCliente">
+        <option value="Normal">Normal</option>
+        <option value="Recurrente">Recurrente</option>
+        <option value="Antiguo">Antiguo Recurrente</option>
+        <option value="Especial">Especial</option>
+      </select>
+
       <input type="submit" value="Totalizar" id="totalizar-button" />
     </form>
     
     <div id="precioNeto-div"></div>
     <div id="costoEnvio-div"></div>
+    <div id="descuentoEnvio-div"></div>
+    <div id="costoTotalEnvio-div"></div>
     <div id="impuesto-div"></div>
     <div id="impuestoCat-div"></div>
     <div id="impuestoTotal-div"></div>

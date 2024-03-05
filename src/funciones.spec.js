@@ -215,3 +215,27 @@ describe("Obtener Costo de Envio", () => {
     expect(funs.costoEnvio(300)).toEqual(9)
   });   
 });
+
+describe("Obtener Descuento de Envio Segun Tipo de Cliente", () => {
+  it("Deberia obtener 0 de descuento para el tipo de cliente Normal", () => {
+    expect(funs.descuentoEnvio("Normal")).toEqual(0)
+  });   
+});
+
+describe("Obtener Descuento de Envio Segun Tipo de Cliente", () => {
+  it("Deberia obtener 0.005 de descuento para el tipo de cliente Recurrente", () => {
+    expect(funs.descuentoEnvio("Recurrente")).toEqual(0.005)
+  });   
+});
+
+describe("Obtener Descuento de Envio Segun Tipo de Cliente", () => {
+  it("Deberia obtener 0.01 de descuento para el tipo de cliente Antiguo Recurrente", () => {
+    expect(funs.descuentoEnvio("Antiguo")).toEqual(0.01)
+  });   
+});
+
+describe("Obtener Descuento de Envio Segun Tipo de Cliente", () => {
+  it("Deberia obtener 0.015 de descuento para el tipo de cliente Especial", () => {
+    expect(funs.descuentoEnvio("Especial")).toEqual(0.015)
+  });   
+});
