@@ -104,12 +104,23 @@ function descuentoEnvio(tipoCliente) {
     }
 }
 
-function getTotal(precioNeto, estado, categoria="Varios", costoEnvio=0){
+function descuentoEspecial(tipoCliente,precioNeto, categoria){
+    if(tipoCliente == "Recurrente" && precioNeto > 3000 && categoria == "Alimentos"){
+        return 100;
+    }
+    if(tipoCliente == "Especial" && precioNeto > 7000 && categoria == "Electronicos"){
+        return 200;
+    }
+    return 0;
+}
+
+function getTotal(tipoCliente,precioNeto, estado, categoria="Varios", costoEnvio=0){
+    const descuentoEspecial = funs.descuentoEspecial(tipoCliente, precioNeto, categoria);
     const descuento = funs.descuento(precioNeto)*precioNeto
     const descuentoCat = funs.descuentoCat(categoria)*precioNeto
     const impuesto = funs.impuesto(estado)*precioNeto
     const impuestoCat = funs.impuestoCat(categoria)*precioNeto
-    return precioNeto + impuesto + impuestoCat + costoEnvio - descuento - descuentoCat
+    return precioNeto + impuesto + impuestoCat + costoEnvio - descuento - descuentoCat - descuentoEspecial;
 }
 
 const funs = {
@@ -121,7 +132,8 @@ const funs = {
     impuestoCat: impuestoCat,
     descuentoCat: descuentoCat,
     costoEnvio: costoEnvio,
-    descuentoEnvio: descuentoEnvio
+    descuentoEnvio: descuentoEnvio,
+    descuentoEspecial: descuentoEspecial
 };
 
 export default funs;

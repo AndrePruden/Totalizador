@@ -239,3 +239,21 @@ describe("Obtener Descuento de Envio Segun Tipo de Cliente", () => {
     expect(funs.descuentoEnvio("Especial")).toEqual(0.015)
   });   
 });
+
+describe("Obtener Descuento para el tipo de cliete, precio neto, categoria", () => {
+  it("Deberia obtener Descuento de 100$ para el tipo=Recurrente, Precio Neto>3000, Categoria=Alimentos", () => {
+    expect(funs.descuentoEspecial("Recurrente", 5000, "Alimentos")).toEqual(100)
+  });   
+});
+
+describe("Obtener Descuento para el tipo de cliete, precio neto, categoria", () => {
+  it("Deberia obtener Descuento de 200$ para el tipo=Especial, Precio Neto>7000, Categoria=Electronicas", () => {
+    expect(funs.descuentoEspecial("Especial", 8000, "Electronicos")).toEqual(200)
+  });   
+});
+
+describe("Obtener Descuento para el tipo de cliete, precio neto, categoria", () => {
+  it("Deberia obtener Descuento de 200$ para el tipo=Especial, Precio Neto>7000, Categoria=Electronicas", () => {
+    expect(funs.descuentoEspecial("Especial", 8000, "Bebidas")).toEqual(0)
+  });   
+});

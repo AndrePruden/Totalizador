@@ -20,7 +20,7 @@ const div8 = document.querySelector("#descuentoTotal-div");
 const div9 = document.querySelector("#costoEnvio-div");
 const div10 = document.querySelector("#descuentoEnvio-div");
 const div11 = document.querySelector("#costoTotalEnvio-div");
-
+const div12 = document.querySelector("#descuentoEspecial-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -43,7 +43,7 @@ form.addEventListener("submit", (event) => {
   div1.innerHTML = "<p> Precio Neto: " + precioNeto + "$</p>";
   div2.innerHTML = "<p> Impuesto para " + estadoValue + "(" + funs.impuesto(estadoValue)*100 + "%): " + (precioNeto*funs.impuesto(estadoValue)).toFixed(3) + "$</p>";
   div3.innerHTML = "<p> Descuento("+ funs.descuento(precioNeto)*100 +"%): " + precioNeto*funs.descuento(precioNeto) + "$</p>";
-  div4.innerHTML = "<p> Precio Total(Descuento - Impuesto - Envio): " + (funs.getTotal(precioNeto, estadoValue, categoriaValue, (costoEnvio-(costoEnvio*funs.descuentoEnvio(tipoClienteValue))))).toFixed(3) + "$</p>";
+  div4.innerHTML = "<p> Precio Total(Descuentos - Impuesto - Envio): " + funs.getTotal(tipoClienteValue, precioNeto, estadoValue, categoriaValue, (costoEnvio-(costoEnvio*funs.descuentoEnvio(tipoClienteValue)))).toFixed(3) + "$</p>";
   div5.innerHTML = "<p> Impuesto para la categoria \"" + categoriaValue + "\"(" + (funs.impuestoCat(categoriaValue)*100).toFixed(2) + "%): " + (precioNeto*funs.impuestoCat(categoriaValue)).toFixed(3) + " </p>";
   div6.innerHTML = "<p> Impuesto Total a pagar(Estado - Categoria)[" + ((funs.impuesto(estadoValue)*100)+funs.impuestoCat(categoriaValue)*100) + "%]: " + (funs.sumar(parseFloat((precioNeto*funs.impuesto(estadoValue)).toFixed(3)), parseFloat((precioNeto*funs.impuestoCat(categoriaValue)).toFixed(3)))).toFixed(3) + "$</p>";
   div7.innerHTML = "<p> Descuento para la categoria \"" + categoriaValue + "\"(" + (funs.descuentoCat(categoriaValue)*100) + "%): " + (precioNeto*funs.descuentoCat(categoriaValue)).toFixed(3) + "$</p>";
@@ -51,6 +51,7 @@ form.addEventListener("submit", (event) => {
   div9.innerHTML = "<p> Costo de Envio: " + costoEnvio + "$</p>";
   div10.innerHTML = "<p> Descuento del Envio(" + funs.descuentoEnvio(tipoClienteValue)*100 + "%): " + costoEnvio*funs.descuentoEnvio(tipoClienteValue) + "$</p>";
   div11.innerHTML = "<p> Costo Total de Envio(Aplicando el descuento): " + (costoEnvio-(costoEnvio*funs.descuentoEnvio(tipoClienteValue))) + "$</p>";
+  div12.innerHTML = "<p> Descuento Especial: " + funs.descuentoEspecial(tipoClienteValue, precioNeto, categoriaValue) + "$</p>";
 }
 });
 
