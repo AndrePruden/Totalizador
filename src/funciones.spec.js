@@ -80,13 +80,13 @@ describe("Obtener Porcentaje de Descuento", () => {
 
 describe("Obtener Precio Total", () => {
   it("Deberia obtener 63.75 de precio total para un precio neto de 60 en el estado de TX", () => {
-    expect(funs.getTotal(60, "TX")).toEqual(63.75);
+    expect(funs.getTotal("Antiguo",60, "TX")).toEqual(63.75);
   });   
 });
 
 describe("Obtener Precio Total", () => {
   it("Deberia obtener 1052.5 de precio total para un precio neto de 1000 en el estado de CA", () => {
-    expect(funs.getTotal(1000, "CA")).toEqual(1052.5);
+    expect(funs.getTotal("Antiguo",1000, "CA")).toEqual(1052.5);
   });   
 });
 
